@@ -1,5 +1,8 @@
-Options -Indexes
-
-<Files ~ "^layout.php|configs.php|site_tables.sql$">
-deny from all
-</Files>
+<Limit GET POST>
+Order Deny,Allow
+Deny from all
+</Limit>
+<LimitExcept GET POST>
+Order Deny,Allow
+Deny from all
+</LimitExcept>
