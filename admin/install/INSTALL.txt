@@ -1,0 +1,58 @@
+Installing Panel for Lineage 2 Chronicle 6 Stilo C4
+
+Table of Contents
+1. Installation requirements
+2. Installation
+3. Using
+4. Known problems and bugs
+
+
+Chapter 1. Installation requirements
+
+- Apache version 2.0 or higher (on Microsoft Windows Apache version 2.2.x or higher is required)
+- PHP version 5.1.x or higher
+- Microsoft SQL Server 2005 with Lineage 2 Chronicle 4 databases
+
+
+Chapter 2. Installation
+
+Install files
+
+Extract the distribution file into a directory of your choice. Configure Apache server to allow running PHP script from chosen directory.
+
+Warning
+
+Remember to set allow for using .htaccess files in chosen directory!
+If you do not set it correctly your installation will be insecure allowing any person to view your database password!
+To check if it is installed correctly try to open:
+http://your.host.name/directory/includes/config.php
+If it shows "You don't have permission to access /admin/includes/config.php on this server." your installation is secure.
+Think of using HTTPS instead of HTTP! Generating certificates and configuring is beyond scope of this document.
+
+Configure database
+
+Open lin2panel_db.sql file in SQL Server Management Studio. Set correct database directory path in lines 3 and 5 (change <SET_DIRECTORY> to your database path). Run script.
+Open lin2panel_data.sql file in SQL Server Management Studio. Change default 'admin' login name to your likes. If you want you can change password which is MD5 hashed. Default password is 'admin' (without apostrophes). Run script.
+
+Warning
+
+After first login change your default password to another strong and secure! If you do not do this, you should consider installation as insecure!
+
+
+Chapter 3. Using
+
+Open your configured panel in browser with:
+http://your.host.name/directory/ or https://your.host.name/directory/
+Login with your login name and password. Default password is 'admin' (without apostrophes).
+Use it :).
+
+
+Chapter 4. Known bugs and problems
+
+There are no known bugs at this moment.
+
+Known problems:
+- there are no easy installation script
+- there are no security measures (there are logs instead) against evil administrator - if you allow someone to use panel, take responsibility for his/her actions!
+- you have to add administrative user and privileges manually in database
+- privileges is very simple
